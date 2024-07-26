@@ -7,15 +7,73 @@ const textoResultado = document.querySelector('.texto-resultado');
 const perguntas = [
     {
     enunciado: "Em que lugar teve origem a palavra música?",
-    alternativas: ["Grécia", "China e Ìndia","Brasil"],
+    alternativas: [
+      {
+         texto: "China",
+         afirmação: "Afirmação da alternativa 1"
+      },
+      {
+        texto: "Grécia",
+        afirmação: "Afirmação da alternativa 2"
+      },
+      {
+        texto: "Brasil",
+        afirmação: "Afirmação da alternativa 3"
+      },
+      {
+        texto: "ìndia",
+        afirmação: "Afirmação da alternativa 4"
+      },
+
+
+       ]
+    },
+
+    {
+       enunciado: "O teatro é uma linguagem de que arte?",
+    alternativas: [
+    {
+      texto: "Artes literárias",
+      afirmação: "Afirmação da alternativa 1"
     },
     {
-    enunciado: "O teatro é uma linguagem de que arte?",
-    alternativas: ["Artes literárias", "Artes cênicas","Artes visuais","Artes musicais"],
+      texto: "Artes cênicas",
+      afirmação: "Afirmação da alternativa 2"
     },
     {
+      texto: "Artes visuais",
+      afirmação: "Afirmação da alternativa 3"
+    },
+    {
+      texto: "Artes musicais",
+      afirmação: "Afirmação da alternativa4 "
+    },
+
+     ]
+
+   },
+
+   {
     enunciado: "Qual é um dos elementos que compoẽm a dança?",
-    alternativas: ["Contrapeso", "Espaço","Ordem","Transferência"],
+    alternativas: [
+    {
+      texto: "Contrapeso",
+      afirmação: "Afirmação da alternativa 1"
+    },
+    {
+      texto: "Espaço",
+      afirmação: "Afirmação da alternativa 2"
+    },
+    {
+      texto: "Ordem",
+      afirmação: "Afirmação da alternativa 3"
+    },
+    {
+      texto: "Transferência",
+      afirmação: "Afirmação da alternativa 4"
+    },
+
+     ]
     },
     ];
 
@@ -31,7 +89,12 @@ const perguntas = [
         function mostraAlternativas() {
             for(const alternativa of perguntaAtual.alternativas){
                const botaoAlternativas = document.createElement ("button");
-               botaoAlternativas.textContent = alternativa;
+               botaoAlternativas.textContent = alternativa.texto;
+               botaoAlternativas.addEventListener("click", 
+               function () {
+                  atual++;
+                  mostraPergunta();
+              });
                caixaAlternativas.appendChild(botaoAlternativas);
             }
         }
