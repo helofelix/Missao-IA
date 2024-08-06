@@ -103,8 +103,8 @@ const perguntas = [
         }
 
         function respostaSelecionada(opcaoSelecionada) {
-         const afrimacoes = opcaoSelecionada.afirmação;
-         historiaFinal += afrimacoes + " ";
+         const afirmacoes = opcaoSelecionada.afirmação;
+         historiaFinal += afirmacoes+ " ";
          atual++
          mostraPergunta();
 
